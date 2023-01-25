@@ -1,0 +1,26 @@
+ <script>
+  // Función para el uso de las opciones
+  document.addEventListener('DOMContentLoaded', function() {
+    const elems = document.querySelectorAll('select')
+    const instances = M.FormSelect.init(elems)
+  })
+
+  document.getElementById('btn').addEventListener('click',doStuff)      
+  function doStuff(){ 
+    const correo
+    const infAlumno = {}
+      infAlumno.nombre = document.getElementById('fnombre').value
+      infAlumno.seccion = document.getElementById('fseccion').value
+      infAlumno.grupo = document.getElementById('fgrupo').value
+//Para la ejeción de la función y recibiendo de paramétro el valor de la caja de texto userClick(uname) y la asigna a la función  en gas
+    google.script.run.userClick(infAlumno,correo);//Objeto información del alumno
+    document.getElementById('fnombre').value = '';
+    var seccion = document.getElementById('fseccion');
+    seccion.selectedIndex = 0;
+    M.FormSelect.init(seccion);
+    var grupo = document.getElementById('fgrupo');
+    grupo.selectedIndex = 0;
+    M.FormSelect.init(grupo);
+//        return (correo);
+  }        
+</script>

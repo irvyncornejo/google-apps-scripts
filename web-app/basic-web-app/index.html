@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= include ("index_style");?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+  </head>
+  <body>
+  <header>
+   <nav>
+    <div class="nav-wrapper  green lighten-1">
+      <a href="#" class="brand-logo">App Test</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#!">Correo</a></li>
+        <li><a href="#!">Almacenamiento</a></li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+   <p>
+     <br>
+     <br>
+     <br>
+   </p>
+  <div class = "container">
+    <div class="row">
+      <div class="input-field col s6 ">
+        <input id="fnombre" type="text" class="validate">
+        <label for="fnombre">Nombre</label>
+      </div>
+     <div class="input-field col s6 ">
+    <select id = "fseccion" >
+      <option disabled selected>Sección</option>
+      <option>Primaria</option> 
+      <option>Secundaria</option>
+      <option>Preparatoria</option>
+      <option>Bachillerato</option>
+    </select>
+      <label>Selecciona una sección</label>
+    </div>
+   </div>
+  </div>
+  
+  <div class = "container">  
+    <div class="row">
+    <div class="input-field col s6">
+     <select id = "fgrupo">
+     <option disabled selected>Grupo</option>
+      <option>110</option>
+      <option>120</option>
+      <option>130</option>
+      <option>210</option>
+      <option>220</option>
+      <option>310</option>
+      <option>320</option>
+      <option>410</option>
+      <option>420</option>
+      <option>510</option>
+      <option>520</option>
+      <option>530</option>
+      <option>610</option>
+      <option>620</option>
+      <option>630</option>
+    </select>
+      <label>Selecciona un grupo</label>
+    </div>
+    </div>
+      <div class="row">
+    <div class="input-field col s4">
+  
+        <button id = "btn" class="btn waves-effect  green lighten-1" type="submit" name="action">Enviar
+    <i class="material-icons right">near_me</i>
+  </button>
+    </div>
+  </div>
+    
+  </div>
+  
+  <footer class="page-footer green lighten-1">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Servicio Médico Possenti</h5>
+              </div>
+              <div class="col l4 offset-l2 s12">               
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Revisar expediente</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contactar</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+         <div class="footer-copyright">
+            <div class="container">
+            <a class="grey-text text-lighten-4 left" href="correo@gmail.com">Hecho con <i class="material-icons center">favorite</i> para Test</a>
+            <a class="grey-text text-lighten-4 right" href="correo@gmail.com">Soporte</a>
+            </div>
+          </div>
+  </footer>
+ 
+   <?!= include ("index_js");?>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
+
+
