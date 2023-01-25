@@ -1,4 +1,4 @@
-const url = 'google sheet url'
+const url = ''
 
 const doGet = (e) => {
   //Logger.log(e.parameter);// e por el evento de ejecución que estará reflejado 

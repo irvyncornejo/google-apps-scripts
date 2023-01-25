@@ -3,11 +3,9 @@
   document.addEventListener('DOMContentLoaded', function() {
     const elems = document.querySelectorAll('select')
     const instances = M.FormSelect.init(elems)
-  })
-
-  document.getElementById('btn').addEventListener('click',doStuff)      
-  function doStuff(){ 
-    const correo
+  })      
+  const doStuff = () => { 
+    const correo = 'test@correo.com'
     const infAlumno = {}
       infAlumno.nombre = document.getElementById('fnombre').value
       infAlumno.seccion = document.getElementById('fseccion').value
@@ -22,5 +20,6 @@
     grupo.selectedIndex = 0;
     M.FormSelect.init(grupo);
 //        return (correo);
-  }        
+  }
+  document.getElementById('btn').addEventListener('click',doStuff)      
 </script>
