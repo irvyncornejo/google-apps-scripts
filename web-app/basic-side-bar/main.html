@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      ul.dropdown-content.select-dropdown li span {
+        color: #1565c0; 
+      }
+      [type="checkbox"].filled-in:checked+span:not(.lever):after{
+        border: 2px solid #1565c0;
+        background-color: #1565c0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Modal Structure General-->
+    <div id="modal1" class="modal">
+      <!-- This content is dynamic for every process or any status-->
+    </div>
+    <div class="container">
+      <p>SideBar</p>
+    </div>
+  </body>
+  <script>
+
+    const closeLoader = () =>{
+      getModal('modal1', true)
+    }
+    const getModal = (element, close) =>{
+  /**
+  * Función para invocar en distintos flujos el modal que da el estatus del proceso o flujo
+  * en que se encuentra
+  *
+  * @param {String | Objeto} element Es el objeto del dom para el modal o el id
+  * @param {Bool} close Boleano que define si se abrirá a se cerrará el modal 
+  * @return N/A
+  */
+  if(close){
+    const elem = document.getElementById(element)
+    const instance = M.Modal.init(elem, {dismissible: false})
+    instance.close()
+  }else{
+    const instance = M.Modal.init(element, {dismissible: false})
+    instance.open()
+  }
+}
+
+const getLoader = (id, message, modal=false, content_=false) =>{
+  /**
+  * #TODO Descripción de la función
+  *
+  * #TODO @param {String} Nombre {Tipo} Descripción
+  * #TODO @return {Number} {Tipo} Descripción
+  */
+  const content = content_ 
+    ? 
+      `<div id="content-modal1" class="modal-content">
+          <p>${message}</p>
+          ${content_}
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+      </div>
+      `
+    : `
+      <div id="content-modal1" class="modal-content">
+          <p>${message}</p>
+          <div class="progress">
+            <div class="indeterminate"></div>
+          </div>
+      </div>
+    `
+  const element = document.getElementById(id)
+  if(modal){
+    element.innerHTML = content
+    getModal(element)
+  }else{
+    element.innerHTML = content
+  }
+}
+  </script>
+</html>
